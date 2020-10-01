@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const url = path && path.length > 0 ? path[0] : "/"
 
   console.log("url", url)
-  const res = await fetch("http://localhost:3000/api/make-static-subdomain", {
+  const res = await fetch(process.env.DOMAIN + "/api/make-static-subdomain", {
     method: "post",
     body: JSON.stringify({ url }),
   })
